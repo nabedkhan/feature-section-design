@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #7396FF;
+}
+h1{
+	color: #007bff;
+	position: relative;
+}
+h1::after{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	border-bottom: 2px solid #007bff;
+	width: 100px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+span{
+	font-weight: 300;
+}
+
+.feature{
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	align-items: center;
+}
+
+.slide{
+	position: relative;
+	overflow: hidden;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+/*Text transition effect*/
+.slide h3{
+	position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+    font-size: 24px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+}
+.slide:hover.slide h3{
+    top: 50px;
+	opacity: 1;
+}
+
+/*Image Zoom Effect*/
+.slide img, .slide h3{
+	transition: 0.5s;
+}
+.slide:hover img{
+	transform: scale(1.1);
+}
+
+/*Border Bottom Effect*/
+.slide::before{
+    content: "";
+	position: absolute;
+    border: 5px solid #007bff;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    transition: 0.3s;
+    z-index: 2;
+}
+.slide:hover::before{
+	bottom: 0px;
+}
+
+/*Overlay Effect*/
+.slide::after{
+	content: "";
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.5;
+    visibility: hidden;
+}
+.slide:hover::after{
+	visibility: visible;
+}
+
+/*footer section*/
+.social-icons a{
+	padding: 10px;
+	font-size: 18px;
+	color: #fff;
+}
